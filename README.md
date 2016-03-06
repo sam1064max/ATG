@@ -5,3 +5,8 @@ a large number of test cases, it is impractical to run all the generated test ca
 test-cases should be lower so that they can be veried manually. But, these test-cases also needs to cover
 atomic conditions in the solution.
 
+## Quick start
+
+```
+$ python runme.py model.c test
+```
