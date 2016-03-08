@@ -44,29 +44,29 @@ int main()
   if(f1){
     if(f2){
       if(f3)
-        printf("%d is a prime, even and squre number.",n);
+        printf("%d is a prime, even and squre number.\n",n);
       else
-        printf("%d is a prime, even and not squre number.",n);
+        printf("%d is a prime, even and not squre number.\n",n);
     }
     else{
       if(f3)
-        printf("%d is a prime, odd and squre number.",n);
+        printf("%d is a prime, odd and squre number.\n",n);
       else
-        printf("%d is a prime, odd and not squre number.",n);
+        printf("%d is a prime, odd and not squre number.\n",n);
     }
   }
   else{
     if(f2){
       if(f3)
-        printf("%d is a composite, even and squre number.",n);
+        printf("%d is a composite, even and squre number.\n",n);
       else
-        printf("%d is a composite, even and not squre number.",n);
+        printf("%d is a composite, even and not squre number.\n",n);
     }
     else{
       if(f3)
-        printf("%d is a composite, odd and squre number.",n);
+        printf("%d is a composite, odd and squre number.\n",n);
       else
-        printf("%d is a composite, odd and not squre number.",n);
+        printf("%d is a composite, odd and not squre number.\n",n);
     }
   }
   return 0;
