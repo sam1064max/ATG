@@ -1,5 +1,5 @@
 #!/bin/bash
-for f in test/*;
+for f in $2
 do
 	g++ -fprofile-arcs -ftest-coverage $1
 	./a.out < $f
