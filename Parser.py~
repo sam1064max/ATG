@@ -1,0 +1,12 @@
+import sys
+import xmltodict
+import json
+import glob
+
+
+suite = dict()
+for filename in glob.iglob(sys.argv[1]):
+    with open(filename) as fd:
+        doc = xmltodict.parse(fd.read())
+    suite[filename] = doc
+print(json.dumps(suite, indent=1))
