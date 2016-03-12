@@ -8,5 +8,5 @@ atomic conditions in the solution.
 ## Quick start
 
 ```
-$ python runme.py model.c test
+$ ./Run.sh model.c "test/*" "xml"
 ```
