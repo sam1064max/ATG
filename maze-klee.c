@@ -14,7 +14,7 @@
   * Maze hardcoded dimensions
   */
 #define H 7
-#define W 12
+#define W 11
 /**
   * Tha maze map
   */
@@ -41,9 +41,7 @@ void draw ()
         printf ("\n");
 }
  
-void read(int a, char p[], int n){
-  scanf("%s",p);
-}
+ 
 /**
   * The main function
   */
@@ -71,8 +69,8 @@ main (int argc, char *argv[])
 //Draw the maze
     draw ();    
 //Read the directions 'program' to execute...
-    read(0,program,ITERS);
-    // klee_make_symbolic(program,ITERS,"program");
+    //read(0,program,ITERS);
+     klee_make_symbolic(program,ITERS,"program");
  
 //Iterate and run 'program'
         while(i < ITERS)
@@ -133,7 +131,7 @@ main (int argc, char *argv[])
           //increment iteration
                   i++;
                   //me wait to human
-                 // sleep(1);
+                  sleep(1);
           }
 //You couldn't make it! You loose!       
 printf("You loose\n");

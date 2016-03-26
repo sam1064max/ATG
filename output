@@ -1,6 +1,0 @@
-Total number of lines :  39
-Number of lines not covered :  1
-lines which are not covered :  [47]
-Total number of Test-cases :  52
-Number of Test-cases selected :  7
-Test-cases selected :  ['test0', 'test-1', 'test1', 'test6', 'test27', 'test4', 'test9']
