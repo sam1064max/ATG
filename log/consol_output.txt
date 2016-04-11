@@ -1,0 +1,2 @@
+1 is a prime, odd and squre number.
+0 is a prime, even and not squre number.

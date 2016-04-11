@@ -1,0 +1,21 @@
+klee --libc=uclibc --posix-runtime temp.bc
+PID: 351
+Started: 2016-04-11 12:08:09
+BEGIN searcher description
+<InterleavedSearcher> containing 2 searchers:
+RandomPathSearcher
+WeightedRandomSearcher::CoveringNew
+</InterleavedSearcher>
+END searcher description
+Finished: 2016-04-11 12:08:10
+Elapsed: 00:00:01
+KLEE: done: explored paths = 2
+KLEE: done: avg. constructs per query = 12
+KLEE: done: total queries = 5
+KLEE: done: valid queries = 1
+KLEE: done: invalid queries = 4
+KLEE: done: query cex = 5
+
+KLEE: done: total instructions = 5183
+KLEE: done: completed paths = 2
+KLEE: done: generated tests = 2
