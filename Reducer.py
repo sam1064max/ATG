@@ -22,11 +22,11 @@ def getMinimalSet(sortedSuite):
 	keys = list(sortedSuite.keys())
 	key = keys[0]
 	minSet.append(key)
-	lineCoverage = [x["coverage"]["packages"]["package"]["classes"]["class"]["lines"]["line"] for x in sortedSuite.values()]
+	lineCoverage = list([x["coverage"]["packages"]["package"]["classes"]["class"]["lines"]["line"] for x in sortedSuite.values()])
 	lines = len(lineCoverage[0])
 	cases = len(lineCoverage)
-	mat = [[int(lineCoverage[j][i]["@hits"]) for i in range(lines)] for j in range(cases)]
-	lineNumbers = [[int(lineCoverage[j][i]["@number"]) for i in range(lines)] for j in range(cases)]
+	mat = list([list([int(lineCoverage[j][i]["@hits"]) for i in range(lines)]) for j in range(cases)])
+	lineNumbers = list([list([int(lineCoverage[j][i]["@number"]) for i in range(lines)]) for j in range(cases)])
 	linesCovered = mat[0]
 	for i in range(1,cases):
 		newTest = [mat[i][j]+linesCovered[j] for j in range(lines)]

@@ -8,5 +8,5 @@ atomic conditions in the solution.
 ## Quick start
 
 ```
-$ ./Run.sh model.c "test/*" "xml"
+$ ./Run.sh <klee-compatible-c-code-file> <gcc-compatible-c-code-file>
 ```

@@ -1,22 +1,12 @@
 #!/bin/bash
 clang -emit-llvm -g -c $1 -o temp.bc
-klee --libc=uclibc --posix-runtime -output-dir=$3 temp.bc > temp
+klee --libc=uclibc --posix-runtime temp.bc > temp
 rm -fr temp temp.bc
 
-mkdir -p $4
-for f in "$3/*";
-do
-	grep -Eo --text 'program.*[a-zA-Z0-9]+' $f | grep -Eo --text '[a-zA-Z0-9]+$' >  "$4/$(basename $f)"
-done
+./klee2test.sh "klee-out-0/*.ktest" "cases"
 
+./cases2xml.sh $2 "cases/*" "xml"
 
-mkdir -p $5
-for f in $4;
-do
-	g++ -fprofile-arcs -ftest-coverage $2
-	./a.out < $f > temp
-	gcovr -r . --xml > "$5/$(basename $f).xml"
-	rm -fr a.out *.gc* temp
-done
+python3 Reducer.py "xml/*" > output
 
-python3 Reducer.py "$5/*" > output
+#rm -fr output klee-last klee-out-* xml/ cases/
