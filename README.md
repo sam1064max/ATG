@@ -5,6 +5,10 @@ a large number of test cases, it is impractical to run all the generated test ca
 test-cases should be lower so that they can be veried manually. But, these test-cases also needs to cover
 atomic conditions in the solution.
 
+###Prerequisites
+Klee needs to be installed on the system before running following command.
+[Klee](http://klee.github.io/getting-started/)
+
 ## Quick start
 
 ```
