@@ -7,7 +7,14 @@ atomic conditions in the solution.
 
 ###Prerequisites
 Klee needs to be installed on the system before running following command.
+
 [Klee](http://klee.github.io/getting-started/)
+
+Scared of Klee ? Use the docker images of ATG.
+
+```
+$ docker pull sam1064max/atg
+```
 
 ## Quick start
 
