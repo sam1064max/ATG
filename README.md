@@ -6,9 +6,7 @@ test-cases should be lower so that they can be veried manually. But, these test
 atomic conditions in the solution.
 
 ###Prerequisites
-Klee needs to be installed on the system before running following command.
-
-[Klee](http://klee.github.io/getting-started/)
+[Klee](http://klee.github.io/getting-started/), [gcovr] (http://gcovr.com/guide.html)
 
 Scared of Klee ? Use the docker images of ATG.
 
