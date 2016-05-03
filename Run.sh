@@ -7,20 +7,26 @@ set -o nounset
 TEST_GENERATOR="klee"
 PARSER="false"
 DELETE="false"
+COST="line-hit-rate-max"
 
-while getopts 'o:p:d:' opt ; do
+while getopts 'o:p:d:c:' opt ; do
   case $opt in
     o) TEST_GENERATOR=$OPTARG ;;
     p) PARSER=$OPTARG ;;
-	d) DELETE=$OPTARG ;;
+    d) DELETE=$OPTARG ;;
+    c) COST=$OPTARG ;;
   esac
 done
 
+shift $(($OPTIND - 1))
+
 if [ $# -lt 2 ]; then
   echo "Usage: $0 [options] klee_code c_code"
-  echo "   -o     Use other test-cases generator (def: $TEST_GENERATOR)"
-  echo "   -p     Use parser to make c code klee compatible (def: $PARSER)"
-  echo "   -d     Delete the temp files after completion (def: $DELETE)"
+  echo "Options:"
+  echo "   -o     Use other test-cases generator (default: $TEST_GENERATOR)"
+  echo "   -p     Use parser to make c code klee compatible (default: $PARSER)"
+  echo "   -d     Delete the temp files after completion (default: $DELETE)"
+  echo "   -c     Use cost function (line-hit-rate-max, line-hit-rate-min, branch, time) (default: $COST)"
   exit 1
 fi
 
@@ -46,7 +52,7 @@ mv -t log/ consol_output.txt temp.bc
 
 ./cases2xml.sh $C_CODE "cases/*" "xml"
 
-python3 Reducer.py "xml/*" > output
+python3 Reducer.py "xml/*" $COST > output
 
 cat output
 
