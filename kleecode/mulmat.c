@@ -1,6 +1,6 @@
 #include <stdio.h>
  
-int main()
+int main(int argc, char *argv[])
 {
   int m, n, p, q, c, d, k, sum = 0;
   int first[10][10], second[10][10], multiply[10][10];

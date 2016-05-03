@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main()
+int main(int argc, char *argv[])
 {
   int n,count=0;
   printf("Enter an integer: ");
